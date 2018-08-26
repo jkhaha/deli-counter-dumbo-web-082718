@@ -4,11 +4,11 @@ def line(katz_deli)
   if katz_deli.empty? == true 
     puts "The line is currently empty."
   else 
-    queue_message = "The line is currently:"
-    queue.each_with_index do |name, index|
-      queue_message << "#{index+1}. #{name}"
+    current_line_message = "The line is currently:"
+    katz_deli.each_with_index do |name, index|
+      current_line_message << "#{index+1}. #{name}"
     end 
-    puts queue_message
+    puts current_line_message
   end
 end
 
