@@ -6,7 +6,7 @@ def line(queue)
   else 
     queue_message = "The line is currently:"
     queue.each_with_index do |name, index|
-      queue_message.concat("#{index+1}. #{name}")
+      queue_message << "#{index+1}. #{name}"
     end 
     puts queue_message
   end
