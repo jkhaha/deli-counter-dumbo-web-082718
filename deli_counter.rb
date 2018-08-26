@@ -1,24 +1,27 @@
-def take_a_number(katz_deli name)
-  katz_deli << name
-  puts "Welcome, #{name}. You are number #{katz_deli.length} in line."
-end 
+katz_deli = [ ]
 
-def now_serving(katz_deli)
-  if katz_deli.length = 0 
-    puts "There is nobody waiting to be served!"
-  else 
-    puts "Currently serving #{katz_deli.shift}."
-  end 
-end 
-
-def line(katz_deli)
-  if katz_deli.length == 0 
+def line(queue)
+  if queue.empty? 
     puts "The line is currently empty."
   else 
-    message = "The line is currently:"
-    katz_deli.each_with_index do |value, index|
-      message += "#{index.to_i+1}. #{value}"
+    queue_message = "The line is currently:"
+    queue.each_with_index do |name, index|
+      queue_message.concat("#{index+1}. #{name}")
     end 
-    
+    puts queue_message
   end
+end
+
+def take_a_number(queue, name)
+  queue.push(name)
+  puts "Welcome, #{name}. You are number #{queue.count} in line."
+end
+
+def now_serving(queue)
+  if queue.empty?
+    puts "There is nobody waiting to be served!"
+  else 
+    customer = queue.shift
+    puts "Currently serving #{customer]."
+  end 
 end 
