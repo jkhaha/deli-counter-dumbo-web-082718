@@ -1,7 +1,7 @@
 katz_deli = [ ]
 
-def line(queue)
-  if queue.empty? 
+def line(katz_deli)
+  if katz_deli.empty? == true 
     puts "The line is currently empty."
   else 
     queue_message = "The line is currently:"
