@@ -1,13 +1,15 @@
-def line(katz_deli)
-  if katz_deli.empty? == true 
+def line(array)
+counter = 1 
+  if array.length == 0 
     puts "The line is currently empty."
   else 
-    current_line_message = "The line is currently:"
-    katz_deli.each_with_index do |name, index|
-      current_line_message << "#{index+1}. #{name}"
+    string = " "
+    array.each do |person|
+      string += "#{counter}. #{person}"
+      counter += 1 
     end 
-    puts current_line_message
-  end
+    puts "The line is currently: #{string}"
+  end 
 end
 
 def take_a_number(queue, name)
